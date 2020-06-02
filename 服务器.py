@@ -9,6 +9,9 @@ while True:
     c, addr = s.accept()
     print('Got connect from', addr)
     c.send(b'Welcome!')
-    print(c.recv(1024).decode())
+    while True:
+        data = c.recv(1024).decode()
+        print(data)
+        if data == 'exit':
+            break
     c.close()
-

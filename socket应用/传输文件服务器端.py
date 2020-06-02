@@ -1,6 +1,7 @@
 import socket
 
 sk = socket.socket()
+# 在两台电脑上运行的时候host用空字符串的意思是，监听连接到服务器的所有ip
 host = '127.0.0.1'
 port = 8888
 sk.bind((host, port))

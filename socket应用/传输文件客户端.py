@@ -1,8 +1,9 @@
 import socket
+import time
 file = 'socket_client_udp.py'
 
 sk = socket.socket()
-host = '192.168.1.4'
+host = '127.0.0.1'
 port = 8888
 sk.connect((host, port))
 msg = sk.recv(1024).decode()
@@ -12,4 +13,5 @@ print(msg)
 with open(file, 'rb') as f:
     for line in f:
         sk.send(line)
+        time.sleep(2)
 
